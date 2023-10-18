@@ -1,4 +1,7 @@
 # A Dog Breed Classifier :dog:
+
+[afbdsh](# Baseline model development)
+
 ## Intro
 You can explore the [model](https://huggingface.co/spaces/noamperez/dog_breed_classifier) using your own examples.
 
@@ -15,6 +18,10 @@ The subsequent steps involved:
 - Creating a dedicated folder for each dog breed.
 - Populating these breed-specific folders with their respective images, ensuring files were appropriately renamed.
 - Eliminating duplicate images from both datasets.
+
+## Baseline model development
+
+
 
 
 
