@@ -8,5 +8,11 @@ We can outline the sections of this project as follows:
 3. Enhancement of the baseline model.
 
 ## Data download and local directory reorganization
+I acquired two primary datasets: [The Stanford Dogs Dataset](https://www.tensorflow.org/datasets/catalog/stanford_dogs) and [The Oxford-IIIT Pet Dataset ](https://www.robots.ox.ac.uk/~vgg/data/pets/).
+The subsequent steps involved:
+- Creating a dedicated folder for each dog breed.
+- Populating these breed-specific folders with their respective images, ensuring files were appropriately renamed.
+- Eliminating duplicate images from both datasets.
+
 
 
