@@ -45,7 +45,20 @@ Then, I saved the model in a pickle file
 ```python
 learn.export('breed_detector.pkl')
 ```
-## Enhancement of the baseline model
+
+## Enhancement of the baseline model :chart_with_upwards_trend:
+In order to improve our performance, we used several methods.
+The first method is using data augmantaion
+```python
+dogs = dogs.new(
+    item_tfms=RandomResizedCrop(128, min_scale=0.5),
+    batch_tfms=aug_transforms())
+```
+
+
+
+
+
 
 
 
