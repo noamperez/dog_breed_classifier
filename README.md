@@ -41,5 +41,15 @@ The results are as follows
 | 3     | 0.904221   | 0.865005   | 0.257060   | 01:07 |
 | 4     | 0.819382   | 0.856869   | 0.254639   | 01:09 |
 
+Then, I saved the model in a pickle file
+```python
+learn.export('breed_detector.pkl')
+```
+## Enhancement of the baseline model
+
+
+
+
+
 
 
