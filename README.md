@@ -18,7 +18,7 @@ The subsequent steps involved:
 
 ## Baseline model development
 In order to train the model, I employed the fastai framework. Here's the code I used:
-```
+```python
 dogs = DataBlock(
     blocks=(ImageBlock, CategoryBlock), 
     get_items=get_image_files, 
@@ -27,11 +27,19 @@ dogs = DataBlock(
     item_tfms=Resize(224))
 ```
 Our baseline model was pretrained resnet18
-```
+```python
 dls = dogs.dataloaders(path)
 learn = vision_learner(dls, resnet18, metrics=error_rate)
 learn.fine_tune(5)
 ```
+The results are as follows
+| epoch | train_loss | valid_loss | error_rate | time  |
+|-------|------------|------------|------------|-------|
+| 0     | 1.455887   | 1.050625   | 0.307084   | 01:10 |
+| 1     | 1.369547   | 1.045225   | 0.303857   | 01:06 |
+| 2     | 1.068617   | 0.942868   | 0.276263   | 01:06 |
+| 3     | 0.904221   | 0.865005   | 0.257060   | 01:07 |
+| 4     | 0.819382   | 0.856869   | 0.254639   | 01:09 |
 
 
 
