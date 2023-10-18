@@ -1,8 +1,8 @@
 # A Dog Breed Classifier :dog:
 ## Intro
 You can explore the [model](https://huggingface.co/spaces/noamperez/dog_breed_classifier) using your own examples.
-A self-initiated project to create a website for dog breed detection.
 
+A self-initiated project to create a website for dog breed detection.
 We can outline the sections of this project as follows:
 
 1. Data download and local directory reorganization (combining two separate datasets).
