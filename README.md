@@ -1,7 +1,4 @@
 # A Dog Breed Classifier :dog:
-
-[afbdsh](# Baseline model development)
-
 ## Intro
 You can explore the [model](https://huggingface.co/spaces/noamperez/dog_breed_classifier) using your own examples.
 
@@ -20,8 +17,21 @@ The subsequent steps involved:
 - Eliminating duplicate images from both datasets.
 
 ## Baseline model development
-
-
+In order to train the model, I employed the fastai framework. Here's the code I used:
+```
+dogs = DataBlock(
+    blocks=(ImageBlock, CategoryBlock), 
+    get_items=get_image_files, 
+    splitter=RandomSplitter(valid_pct=0.2, seed=42),
+    get_y=parent_label, 
+    item_tfms=Resize(224))
+```
+Our baseline model was pretrained resnet18
+```
+dls = dogs.dataloaders(path)
+learn = vision_learner(dls, resnet18, metrics=error_rate)
+learn.fine_tune(5)
+```
 
 
 
