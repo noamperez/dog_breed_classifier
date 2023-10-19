@@ -55,7 +55,7 @@ dogs = dogs.new(
     item_tfms=RandomResizedCrop(128, min_scale=0.5),
     batch_tfms=aug_transforms())
 ```
-Second, we changed the model to [convnext_tiny_in22k](https://huggingface.co/timm/convnext_tiny.fb_in22k)
+Second, we changed the model to [convnext_tiny_in22k](https://huggingface.co/timm/convnext_tiny.fb_in22k). I selected this model because it outperforms ResNet18, yet it's a more lightweight version of a larger model that I couldn't run on my personal laptop. Furthermore, when deploying the model, a smaller model generally runs faster.
 ```python
 dls = dogs.dataloaders(path)
 learn = vision_learner(dls, 'convnext_tiny_in22k', metrics=error_rate)
@@ -71,6 +71,7 @@ The results are as follows
 | 3     | 0.428763   | 0.471445   | 0.141197   | 11:20|
 | 4     | 0.375453   | 0.450840   | 0.138938   | 11:21|
 
+When experimenting with other data augmentation methods or alternative models, it didn't yield significant improvements.
 Then, I saved the model in a pickle file
 ```python
 learn.export('breed_detector_2.pkl')
