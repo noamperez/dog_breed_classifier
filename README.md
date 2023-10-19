@@ -54,8 +54,12 @@ dogs = dogs.new(
     item_tfms=RandomResizedCrop(128, min_scale=0.5),
     batch_tfms=aug_transforms())
 ```
-
-
+Second, we changed the model to [convnext_tiny_in22k](https://huggingface.co/timm/convnext_tiny.fb_in22k)
+```python
+dls = dogs.dataloaders(path)
+learn = vision_learner(dls, 'convnext_tiny_in22k', metrics=error_rate)
+learn.fine_tune(5)
+```
 
 
 
