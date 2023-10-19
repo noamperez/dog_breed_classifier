@@ -76,12 +76,19 @@ Then, I saved the model in a pickle file
 learn.export('breed_detector_2.pkl')
 ```
 
-## Deploy the model
-Now, when we have a working model, it's the time to make a website that detect the breed of dogs.
-In order to do that, we used [huggingface](https://huggingface.co/) platform.
+## Deploy the model :package:
+Now, as we have a functional model, it's time to build a website for dog breed detection. To achieve this, we've leveraged the [Hugging Face platform](https://huggingface.co/). Here's the roadmap for the implementation:
 
+First, we will load the pickle file we saved earlier.
+```python
+learn = load_learner('breed_detector_2.pkl')
+labels = learn.dls.vocab
+```
 
-
+Then, we use huggingface and [gradio](https://www.gradio.app/) to deploy the model into a website.
+```python
+gr.Interface(fn=predict,inputs=gr.inputs.Image(shape=(192, 192)),outputs=gr.outputs.Label(num_top_classes=3),title=title,description=description,article=article,examples=examples,interpretation=interpretation,enable_queue=enable_queue).launch(share=True)
+```
 
 
 
