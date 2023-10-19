@@ -8,6 +8,7 @@ We can outline the sections of this project as follows:
 1. Data download and local directory reorganization (combining two separate datasets).
 2. Baseline model development.
 3. Enhancement of the baseline model.
+4. Deploy the model.
 
 ## Data download and local directory reorganization
 I acquired two primary datasets: [The Stanford Dogs Dataset](https://www.tensorflow.org/datasets/catalog/stanford_dogs) and [The Oxford-IIIT Pet Dataset ](https://www.robots.ox.ac.uk/~vgg/data/pets/).
@@ -74,6 +75,11 @@ Then, I saved the model in a pickle file
 ```python
 learn.export('breed_detector_2.pkl')
 ```
+
+## Deploy the model
+Now, when we have a working model, it's the time to make a website that detect the breed of dogs.
+In order to do that, we used [huggingface](https://huggingface.co/) platform.
+
 
 
 
