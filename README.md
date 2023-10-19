@@ -60,7 +60,20 @@ dls = dogs.dataloaders(path)
 learn = vision_learner(dls, 'convnext_tiny_in22k', metrics=error_rate)
 learn.fine_tune(5)
 ```
+The results are as follows
 
+| epoch | train_loss | valid_loss | error_rate | time |
+|-------|------------|------------|------------|------|
+| 0     | 0.768896   | 0.633528   | 0.192190   | 11:25|
+| 1     | 0.737943   | 0.609681   | 0.181217   | 11:24|
+| 2     | 0.585935   | 0.529555   | 0.156366   | 11:26|
+| 3     | 0.428763   | 0.471445   | 0.141197   | 11:20|
+| 4     | 0.375453   | 0.450840   | 0.138938   | 11:21|
+
+Then, I saved the model in a pickle file
+```python
+learn.export('breed_detector_2.pkl')
+```
 
 
 
