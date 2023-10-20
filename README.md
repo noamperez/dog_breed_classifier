@@ -17,6 +17,8 @@ The subsequent steps involved:
 - Populating these breed-specific folders with their respective images, ensuring files were appropriately renamed.
 - Eliminating duplicate images from both datasets.
 
+Following this procedure, we obtained a dataset comprising approximately 40 distinct breeds, each containing around 200 images.
+
 ## Baseline model development
 In order to train the model, I employed the fastai framework. Here's the code I used:
 ```python
